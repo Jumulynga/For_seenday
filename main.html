@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="stylesheet" href="stylesheet/main.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Партнерство</title>
+  </head>
+  <body>
+    <div id="app">
+    <section >
+      <div class="block"><div class="text-bold unld">Выгрузка</div>
+      <div class="text-bold">Выполняет работу:</div>
+      - {{stat1}} <br>
+      - {{stat2}}</div>
+      <div @click="showMessage(key), visible=false" v-for="key in count" ><block :dat="key" ></block></div>
+    </section>
+    <main><div class="notice" v-if="visible"><div>Для того, чтобы посмотреть информацию о <span class="text-bold">выгрузке</span>, а также ее скачать, нажатие на требуемую выгрузку в столбце слева</div></div>
+    <div v-if="!visible" class="mainMessage">
+      <header>
+        <span class="IDNumber">{{IDNumber}}</span>
+        <span class="title" ><span v-html=title></span></span>      
+        <span class="del" @click="visible=true"></span>
+      </header>        
+
+      <messageBody>
+        <div class="clue">Если после клика на ссылку загрузка не пошла, проверьте, не блокирует ли браузер загрузку</div>
+        <div class="download">
+          <span class="text-bold">Ссылка для скачивания архива Выгрузки (.zip):</span><br>
+          <span class="link"> {{link}} </span><a href="{{link}}" class="span-link" download> скопировать ссылку</a>
+        </div>
+      </messageBody>
+    </div>
+    </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

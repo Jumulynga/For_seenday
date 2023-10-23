@@ -1,0 +1,160 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.2;
+  background-color: rgb(224, 233, 240);
+  overflow: hidden;
+}
+
+#app{
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 35% 1fr;
+}
+
+section::-webkit-scrollbar {
+  display: none;
+}
+
+section {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+
+section{
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.notice{
+  color: rgb(128, 65, 128);
+  white-space: pre-warp;
+  background-color: rgb(219, 196, 241);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.notice > div{
+  max-width: 95%;
+}
+
+.text-bold{
+  font-weight: bold;
+}
+
+.block{
+  padding: 15px;
+  border-radius: 3px;
+  font-size: 14px;
+  margin: 15px;
+  background-color: white;
+}
+
+.block .unld{
+  font-size: 20px;
+  cursor:default;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainMessage{
+  margin-top: 15px;
+  background-color: white;
+  padding-bottom: 5px;
+}
+
+.IDNumber, .del{
+  color: white;
+  background-color: rgb(87, 56, 116);
+  padding: 15px;
+}
+
+.title{
+  background-color: rgb(236, 234, 234);
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.del{
+  cursor: pointer;
+  background-color: rgb(189, 83, 83);
+}
+
+.del::after{
+  content: "X";  
+}
+
+.link{
+  color: rgb(137, 76, 194);
+}
+
+.span-link{
+  color: rgb(126, 126, 126);
+  text-decoration: underline dotted;
+}
+
+.clue{
+  background-color: rgb(231, 231, 231);
+  margin: 15px 25px 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.download{
+  margin: 10px 25px;
+}
+
+messageBody .text-bold{
+  font-size: 16px;
+  color: rgb(126, 126, 126);
+}
+
+.green{
+  border-left: 10px solid rgb(88, 192, 88);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+
+  #app{
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 1fr;
+  }
+
+  section{
+    grid-row: 2 / 3;
+    margin-top: 10em;
+    height: 60vh;
+  }
+
+  .mainMessage{
+    position: relative;
+  }
+
+  .del{
+    position: absolute;
+    bottom: 0;  
+    right: 0;
+  }
+
+  .del::after{
+    content: "Закрыть";
+  }
+
+  .main{
+    grid-row: 1 / 2;
+    z-index: 10;
+    position: fixed;
+  }
+
+  .block > h3{
+    font-size: 18px;
+  }
+}
